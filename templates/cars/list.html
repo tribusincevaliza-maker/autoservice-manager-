@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Автомобили</title>
+</head>
+<body>
+    <h1>Список автомобилей</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Владелец</th>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Госномер</th>
+                <th>Год</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+            <tr>
+                <td>{{ car.id }}</td>
+                <td>{{ car.owner.full_name }}</td>
+                <td>{{ car.brand }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.plate_number }}</td>
+                <td>{{ car.year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="/cars/add">➕ Добавить автомобиль</a>
+
+
+    <a href="/">На главную</a>
+</body>
+</html>

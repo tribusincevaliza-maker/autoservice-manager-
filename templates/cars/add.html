@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить автомобиль</title>
+</head>
+<body>
+    <h1>Добавление автомобиля</h1>
+    <form method="POST">
+        <p>Клиент:
+            <select name="client_id" required>
+                <option value="">Выберите клиента</option>
+                {% for client in clients %}
+                <option value="{{ client.id }}">{{ client.full_name }} ({{ client.phone }})</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>Марка: <input type="text" name="brand" required></p>
+        <p>Модель: <input type="text" name="model" required></p>
+        <p>Госномер: <input type="text" name="plate_number"></p>
+        <p>Год выпуска: <input type="number" name="year"></p>
+        <button type="submit">Сохранить</button>
+        <a href="/cars">Отмена</a>
+    </form>
+</body>
+</html>
