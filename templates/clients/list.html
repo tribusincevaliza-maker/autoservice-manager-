@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Клиенты - AutoService Manager</title>
+</head>
+<body>
+    <h1>Список клиентов</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ФИО</th>
+                <th>Телефон</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.full_name }}</td>
+                <td>{{ client.phone }}</td>
+                <td>{{ client.email }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
